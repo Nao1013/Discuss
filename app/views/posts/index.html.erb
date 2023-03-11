@@ -1,19 +1,20 @@
-<div class="container">
+<div class="container text-center">
   <div class="row">
 <div class="center-block mx-auto col-6">
-<h4>投稿一覧</h4>
+<h2 class="p-3 bg-info text-white border-info rounded-pill">投稿一覧</h2>
 
-<table>
+<table class="table table-borderless">
   <tr>
-    <th>Title</th>
-    <th></th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col"></th>
   </tr>
- 
+
   <% @posts.each do |post| %>
     <tr>
       <td><%= link_to post.title, post_path(post.id) %></td>
-      <td><%= link_to '編集', edit_post_path(post.id) %></td>
-      <td><%= link_to '削除', post_path(post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+      <td><%= link_to '編集', edit_post_path(post.id), class: "btn btn-success" %></td>
+      <td><%= link_to '削除', post_path(post.id), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
     </tr>
   <% end %>
 </table>

@@ -15,7 +15,7 @@
  <%= form_with model: @post do |f| %>
     <h4>タイトル</h4>
       <%= f.text_field :title,  class: "form-control" %>
-    <h4 >内容</h4>
+    <h4 class="mt-2">内容</h4>
       <%= f.text_area :body, class: "form-control", rows: "30" %>
       <div class="text-right">
     <%= f.submit '再投稿', class: "btn btn-success mt-2" %>
