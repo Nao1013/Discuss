@@ -1,4 +1,7 @@
-<h4>編集</h4>
+<div class="container text-center">
+  <div class="row">
+<div class="center-block mx-auto col-6">
+ <h2 class="p-3 bg-success text-white border-success rounded-pill">編集</h2>
 
 <% if @post.errors.any? %>
   <%= @post.errors.count %>件のエラーが発生しました
@@ -11,9 +14,13 @@
 
  <%= form_with model: @post do |f| %>
     <h4>タイトル</h4>
-      <%= f.text_field :title %>
-    <h4>内容</h4>
-      <%= f.text_area :body %>
-    <%= f.submit '投稿' %>
+      <%= f.text_field :title,  class: "form-control" %>
+    <h4 >内容</h4>
+      <%= f.text_area :body, class: "form-control", rows: "30" %>
+      <div class="text-right">
+    <%= f.submit '再投稿', class: "btn btn-success mt-2" %>
+    </div>
   <% end %>
-
+</div>
+</div>
+</div>
