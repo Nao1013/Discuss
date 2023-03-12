@@ -1,0 +1,38 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col-6 mx-auto">
+  <h3><%= @user.name %></h3>
+  <%= image_tag @user.get_profile_image(100,100) %>
+</div>
+<table>
+    <tr>
+      <thead>
+        <th></th>
+        <th>ユーザー</th>
+        <th>タイトル</th>
+        <th>内容</th>
+      </thead>
+    </tr>
+
+<% @post_images.each do |post_image| %>
+<div>
+  <%= link_to posts_path(post_image.id) do %>
+  <% if @user == current_user.id %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <% end %>
+    <%#= image_tag post_image.get_image %> <!--画像表示欄（現在削除中の為コメントアウト）-->
+  <% end %>
+    <tr>
+      <tbody>
+        <td><%= image_tag post_image.user.get_profile_image(100,100), class: "rounded-circle" %></td>
+        <td><%= post_image.user.name %></td>
+        <td><%= post_image.title %></td>
+        <td><%= post_image.body %></td>
+      </tbody>
+    </tr>
+  </table>
+</div>
+<% end %>
+</div>
+</div>
+</div>
