@@ -10,6 +10,9 @@ class User < ApplicationRecord
   # コメントのアソシエーション
   has_many :post_comments, dependent: :destroy
   
+  # いいねのアソシエーション
+  has_many :favorites, dependent: :destroy
+  
   # プロフィール画像
   has_one_attached :profile_image
   
