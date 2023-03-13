@@ -7,6 +7,9 @@ class User < ApplicationRecord
   # post_idとアソシエーション関係
   has_many :posts, dependent: :destroy
   
+  # コメントのアソシエーション
+  has_many :post_comments, dependent: :destroy
+  
   # プロフィール画像
   has_one_attached :profile_image
   
